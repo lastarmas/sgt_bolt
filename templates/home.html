@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <h1 class="display-4 fw-bold text-primary mb-4">
+                Suivi de Travaux Professionnel
+            </h1>
+            <p class="lead mb-4">
+                Gérez efficacement vos projets de migration, REH et mises à niveau avec notre plateforme de suivi complète.
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'dashboard' %}" class="btn btn-primary btn-lg px-4 me-md-2">
+                        <i class="fas fa-tachometer-alt me-2"></i>Tableau de Bord
+                    </a>
+                {% else %}
+                    <a href="{% url 'inscription' %}" class="btn btn-primary btn-lg px-4 me-md-2">
+                        <i class="fas fa-user-plus me-2"></i>Commencer
+                    </a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-primary btn-lg px-4">
+                        <i class="fas fa-sign-in-alt me-2"></i>Connexion
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <h4 class="card-title mb-4">Fonctionnalités Principales</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-sync-alt text-primary me-3 fs-4"></i>
+                                <div>
+                                    <h6 class="mb-1">Migration</h6>
+                                    <small class="text-muted">Suivi complet des projets de migration</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-building text-success me-3 fs-4"></i>
+                                <div>
+                                    <h6 class="mb-1">REH</h6>
+                                    <small class="text-muted">Gestion des rénovations et extensions</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-level-up-alt text-warning me-3 fs-4"></i>
+                                <div>
+                                    <h6 class="mb-1">Mise à Niveau</h6>
+                                    <small class="text-muted">Suivi des améliorations techniques</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-clock text-info me-3 fs-4"></i>
+                                <div>
+                                    <h6 class="mb-1">Timestamps</h6>
+                                    <small class="text-muted">Historique détaillé des exécutions</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
